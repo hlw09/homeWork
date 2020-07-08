@@ -1,0 +1,25 @@
+选择题
+1、下面关于虚拟 DOM 的说法正确的是：
+A. 使用虚拟 DOM 不需要手动操作 DOM，可以极大的提高程序的性能。
+B. 使用虚拟 DOM 不需要手动操作 DOM，可以极大的提高开发效率。
+C. 虚拟 DOM 可以维护程序的状态，通过对比两次状态的差异更新真实 DOM。
+D.虚拟DOM本质上是JavaScript对象，可以跨平台，例如服务器渲染，Weex开发等。
+答：abcd
+总结：虚拟dom参照于直接的dom操作肯定会慢一点，因为多包装了一层，多一层堆积；
+     d但是有了虚拟dom这一步层的封装，就能够重复不同的渲染帮助我们更轻松的实现代码跨平台； web下虚拟dom的div映射到真实的div，而到移动平台就可以映射到视图组件上，像weex和rn都是这种想法；同时还有某种服务端渲染之类的；
+     ž再者就是在虚拟dom这一层，通过diff算法，把没必要的dom操作更新打回头，降低dom开销
+
+2、下面关于 Snabbdom 库的描述错误的是：
+A. Snabbdom 库是一个高效的虚拟 DOM 库，Vue.js 的虚拟 DOM 借鉴了 Snabbdom 库。
+B. 使用 h() 函数创建 VNode 对象，描述真实 DOM 结构。
+C. Snabbdom 库本身可以处理 DOM 的属性、事件、样式等操作。
+D.使用patch（oldVnode，null）可以清空页面元素
+答：abcd
+
+
+简答题
+1、请简述 patchVnode 函数的执行过程。
+答：触发prepatch钩子函数=》触发update钩子函数=》根据新老节点chilren，text等属性做对应的移除清空添加等操作=》触发postpatch钩子函数
+
+
+
